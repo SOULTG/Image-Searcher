@@ -6,6 +6,18 @@ START_MSG = (
      
      @SoulBotzz"""
 )
+
+ABOUT_MSG = (
+  """🔅NAME    : IMAGE SEARCHER
+     🔅CREATOR : [SOUL](www.github.com/SOULTG/)
+     🔅DEPLOY  : [KOYEB](http://koyeb.com/)
+     🔅CODING  : [GITHUB](www.github.com/)
+     🔅SUPPORT : [SOUL BOTZZ](https://telegram/SoulBotzz)
+     🔅REPO    : [CLICK HERE](www.github.com/SOULTG/Image-Searcher/)
+     
+     @SoulBotzz"""
+)
+  
 HELP_MSG = (
   """🔰 *MY HELP SECTION* 🔰\n\n
      TO SEARCH IMAGES JUST TYPE MY USERNAME IN THE QUERY AND CONTENT.
