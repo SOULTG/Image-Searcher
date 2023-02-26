@@ -1,3 +1,6 @@
+from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
+import random
+from pyrogram.errors import UserNotParticipant
 import os
 import sys
 import time
@@ -21,16 +24,35 @@ if not all((TG_API_TOKEN, GOOGLE_API_KEY, SEARCH_ENGINE_ID)):
 bot = TeleBot(TG_API_TOKEN, parse_mode="Markdown")
 cse = GoogleSearchEngine(GOOGLE_API_KEY, SEARCH_ENGINE_ID)
 
+force_channel = "SoulBotzz"
 
-# start command
-@bot.message_handler(commands=['start'])
-def start_message(message: types.Message) -> None:
-    """Handle `/start` command."""
-    first_name = message.from_user.first_name
-    chat_id = message.from_user.id
-    bot.send_message(
-        chat_id,
-        texts.START_MSG.format(first_name=first_name, chat_id=chat_id)
+PICS = [
+ "https://telegra.ph/file/208a757bfac7d1c0a17dc.jpg"
+ "https://telegra.ph/file/1ff90b031c89bd438e2ed.jpg"
+]
+
+
+
+@bot.on_message(filters.command("start"))
+async def start_cmd(client, message):
+    if force_channel:
+        try:
+            user = await client.get_chat_member(force_channel, message.from_user.id)
+            if user.status == "kicked out":
+                await message.reply_text("You Are Banned")
+                return
+        except UserNotParticipant :
+            await message.reply_text(
+                text="𝙔𝙊𝙐 𝙃𝘼𝙑𝙀 𝙏𝙊 𝙎𝙐𝘽𝙎𝘾𝙍𝙄𝘽𝙀 𝙈𝙔 𝘾𝙃𝘼𝙉𝙉𝙀𝙇 𝙏𝙊 𝙐𝙎𝙀 𝙏𝙃𝙄𝙎 𝘽𝙊𝙏 😁",
+                reply_markup=InlineKeyboardMarkup( [[
+                 InlineKeyboardButton("⚡️𝙐𝙋𝘿𝘼𝙏𝙀 𝘾𝙃𝘼𝙉𝙉𝙀𝙇⚡️", url=f"t.me/{force_channel}")
+                 ]]
+                 )
+            )
+            return
+    await message.reply_photo(
+        photo=random.choice(PICS),
+        caption=texts.START_MSG.format(first_name=first_name, chat_id=chat_id)
     )
 
 
