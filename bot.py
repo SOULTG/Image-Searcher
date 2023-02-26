@@ -53,9 +53,26 @@ async def start_cmd(client, message):
     await message.reply_photo(
         photo=random.choice(PICS),
         caption=texts.START_MSG.format(first_name=first_name, chat_id=chat_id)
+        reply_markup=InlineKeyboardMarkup( [[
+                 InlineKeyboardButton("⚡️UPDATE CHANNEL⚡️", url=f"t.me/SoulBotzz")
+                 ]]
+                 )
+            )
     )
 
 
+@bot.on_message(filters.command("start"))
+async def start_cmd(client, message):
+    await message.reply_photo(
+        photo=random.choice(PICS),
+        caption=texts.ABOUT_MSG
+        reply_markup=InlineKeyboardMarkup( [[
+                 InlineKeyboardButton("⚡️UPDATE CHANNEL⚡️", url=f"t.me/SoulBotzz")
+                 ]]
+                 )
+            )
+    )
+    
 # help command
 @bot.message_handler(commands=['help'])
 def help_message(message: types.Message) -> None:
