@@ -1,20 +1,22 @@
 START_MSG = (
-    "Hey [{first_name}](tg://user?id={chat_id})!\n\n"
-    "I'm *Imarch* 🤖, a bot for searching any kind images on Google 🌐.\n\n"
-    "Send /help to get started and see the instructions 📖."
+  """Hi [{first_name}](tg://user?id={chat_id})!\n\n"
+     I AM POWERFUL IMAGE SEARCH BOT 😎 
+     I CAN PROVIDE ANY KIND OF IMAGES IN JUST A SECOND.
+     HIT HERE /help TO SEE MY POWER 😍
+     
+     @SoulBotzz"""
 )
 HELP_MSG = (
-    "📖 *Imarch Bot Usage*\n\n"
-    "To search for images, just type my username and the query you want to search 🔎\n"
-    "\n*Examples* 🧪 \n\n"
-    "🔸 `@ImarchBot cat` - search for images of cats\n"
-    "🔸 `@ImarchBot cat page:2` - search for images of cats on page 2\n"
-    "\n❗ Beside the query, you can add commands to change the search results behavior.\n\n"
-    "*Supported commands*:\n\n"
-    "🔸 `page:<number>`: Change the page of the search results (default: 1)\n"
-    "\n💡 *Note:*\n\n"
-    "The search results are paginated. You can change the page "
-    "of the search results by adding a command to the query.\n"
+  """🔰 *MY HELP SECTION* 🔰\n\n
+     TO SEARCH IMAGES JUST TYPE MY USERNAME IN THE QUERY AND CONTENT.
+     
+     ⭕ EXAMPLE ⭕
+     --------------
+     @SoulISRobot Rashmika Mandana
+     @SoulISRobot Girl in Shirt
+     @SoulISRobot Girl in Saree
+     
+     @SoulBotzz"""
 
 )
 NOT_FOUND_MSG = (
